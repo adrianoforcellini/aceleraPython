@@ -1,3 +1,6 @@
+import os
+
+path =  os.path.dirname(os.path.realpath(__file__))
 def lines_with_word_occurrences(file_path: str, word: str):
     str_lines = read_file_lines(file_path)
     result = []
@@ -14,9 +17,9 @@ def read_file_lines(file_path):
         file_content = file.read()
     return file_content.split()
 
-
 def main():
-    file_path = "data/word_finder.txt"
+    file_path = f"{os.path.dirname(os.path.realpath(__file__))}/../data/word_finder.txt"
+    print(file_path)
     search_word = "python"
     occurrences = lines_with_word_occurrences(file_path, search_word)
     print(
