@@ -1,12 +1,14 @@
 import os
 
-path =  os.path.dirname(os.path.realpath(__file__))
+path = os.path.dirname(os.path.realpath(__file__))
+
+
 def lines_with_word_occurrences(file_path: str, word: str):
     str_lines = read_file_lines(file_path)
     result = []
-    for index, line in enumerate(str_lines, start=1):
+    for index, line in enumerate(str_lines):
         if word.casefold() in line.casefold():
-            result.append(index)
+            result.append(index + 1)
         # else:
         #     str_lines.remove(line)
     return result
@@ -15,7 +17,8 @@ def lines_with_word_occurrences(file_path: str, word: str):
 def read_file_lines(file_path):
     with open(file_path, "r") as file:
         file_content = file.read()
-    return file_content.split('\n')
+    return file_content.split("\n")
+
 
 def main():
     file_path = f"{os.path.dirname(os.path.realpath(__file__))}/../data/word_finder.txt"
