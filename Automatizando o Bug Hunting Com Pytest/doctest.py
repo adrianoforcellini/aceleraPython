@@ -12,3 +12,5 @@ def mean(numbers):
 
     """
     return sum(numbers) / len(numbers)
+
+mean([0,1,2,3,4])
