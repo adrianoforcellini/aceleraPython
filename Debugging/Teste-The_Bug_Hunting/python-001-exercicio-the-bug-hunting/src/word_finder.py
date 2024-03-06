@@ -17,10 +17,12 @@ def lines_with_word_occurrences(file_path: str, word: str):
 def read_file_lines(file_path):
     with open(file_path, "r") as file:
         file_content = file.read()
+        
     return file_content.split("\n")
 
 
 def main():
+# creating enumerate objects
     file_path = f"{os.path.dirname(os.path.realpath(__file__))}/../data/word_finder.txt"
     search_word = "python"
     occurrences = lines_with_word_occurrences(file_path, search_word)
